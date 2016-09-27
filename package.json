@@ -1,0 +1,66 @@
+{
+    "name": "code-cov",
+    "displayName": "CodeCov",
+    "description": "",
+    "version": "0.1.0",
+    "publisher": "shiqingpu",
+    "engines": {
+        "vscode": "^1.0.0"
+    },
+    "categories": [
+        "Other"
+    ],
+    "activationEvents": [
+        "onCommand:codecov.mark",
+        "onCommand:codecov.clear",
+        "onCommand:codecov.config"
+    ],
+    "main": "./out/src/extension",
+    "contributes": {
+        "commands": [
+            {
+                "command": "codecov.mark",
+                "title": "CodeCov: Mark All Codes"
+            },
+            {
+                "command": "codecov.clear",
+                "title": "CodeCov: Clear All Marks"
+            },
+            {
+                "command": "codecov.config",
+                "title": "CodeCov: Karma Config"
+            }
+        ],
+        "keybindings": [
+            {
+                "command": "codecov.mark",
+                "key": "alt+m"
+            },
+            {
+                "command": "codecov.clear",
+                "key": "alt+c"
+            },
+            {
+                "command": "codecov.config",
+                "key": "alt+k"
+            }
+        ]   
+    },
+    "scripts": {
+        "vscode:prepublish": "node ./node_modules/vscode/bin/compile",
+        "compile": "node ./node_modules/vscode/bin/compile -watch -p ./",
+        "postinstall": "node ./node_modules/vscode/bin/install"
+    },
+    "dependencies": {
+        "typescript": "^1.8.5",
+        "vscode": "^0.11.0",
+        "chai": "^3.5.0",
+        "colors": "^1.1.2",
+        "karma": "^1.1.2",
+        "karma-mocha": "^1.1.1",
+        "karma-chai": "^0.1.0",
+        "karma-phantomjs-launcher": "^1.0.1",
+        "karma-coverage": "^1.1.1",
+        "karma-mocha-reporter": "^2.1.0"
+    }
+}
